@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-            const loader = document.getElementById('globalLoader');
         if (loader){
           const timer = setTimeout(()=>{
             loader.style.opacity = 0;

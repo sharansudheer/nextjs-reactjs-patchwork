@@ -1,7 +1,8 @@
 module.exports = {
-  reactStrictMode: true,
-  images: {
-        disableStaticImages: true,
-      },
-      
-}
+    reactStrictMode: true,
+    images: {
+          disableStaticImages: true,
+        },
+        
+  }
+  

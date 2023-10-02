@@ -1,11 +1,9 @@
 import Logo from "../logo";
 import styles from "../../styles/Test.module.css";
-import React, { forwardRef } from 'react';
 
-
-const AboutMe = React.forwardRef((props, ref) =>  {
+export default function AboutMe() {
     return (
-        <div ref={ref} className={styles.child} id="AboutMe">
+        <div className={styles.child} id="AboutMe">
             <div className={styles.logoWrap}>
                 <Logo className={styles.logo} width={345}
                     height={292}></Logo>
@@ -27,5 +25,4 @@ const AboutMe = React.forwardRef((props, ref) =>  {
                 </div>
         </div>
     );
-});
-export default AboutMe;
+}

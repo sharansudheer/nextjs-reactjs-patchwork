@@ -32,22 +32,11 @@ export default function ContactMe() {
                 <button type="submit" disabled={btnState}>{btnState ? "Sending..." : (<> <span className={styles.sendIcon}></span> Send </>)}</button>
               </div>
 
-
-            {/*rel="noopener noreferrer -> To prevent the new page from accessing the window.opener property of the originating page*/}
             </form>
             <div className={styles.socialIcons}>
-              <Link href={"https://instagram.com/anshil.me"} passHref={true}>
-                <a target="_blank" rel="noopener noreferrer" className={styles.socialIcons}>
-                  <span className={styles.instagram}></span></a>
-                </Link>
-              <Link href={"https://github.com/0VERRIDER"} passHref={true}>
-              <a target="_blank" rel="noopener noreferrer" className={styles.socialIcons}>
-                <span className={styles.github}></span> </a>
-                </Link> 
-              <Link href={"mailto:admin@anshil.me"} passHref={true}>
-              <a target="_blank" rel="noopener noreferrer" className={styles.socialIcons}>
-                <span className={styles.email}></span> </a>
-                </Link>
+              <Link href={"https://instagram.com/anshil.me"} passHref={true}><span className={styles.instagram}></span></Link>
+              <Link href={"https://github.com/0VERRIDER"} passHref={true}><span className={styles.github}></span></Link>
+              <Link href={"mailto:admin@anshil.me"} passHref={true}><span className={styles.email}></span></Link>
 
             </div>
           </div>

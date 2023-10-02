@@ -1,4 +1,10 @@
-
+.container {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
+}
 
 .sideNav {
   position: fixed;
@@ -433,9 +439,31 @@
   width: 82%;
 }
 
+.child {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: none;
+  background-color: #121212;
+}
 
+.main {
+  line-height: 58px;
+  font-size: 64px;
+  color: white;
+  font-weight: 700;
+}
 
+.greetings {
+  display: block;
+  text-transform: uppercase;
+}
 
+.name {
+  display: inline-block;
+  text-transform: uppercase;
+  bottom: -45px;
+}
 
 .description ul {
   overflow: hidden;
@@ -462,7 +490,11 @@
   z-index: 5;
 }
 
-
+.title {
+  position: absolute;
+  display: block;
+  margin: 35vh 0 0 10vw;
+}
 
 .frontAvatar > .rect {
   position: absolute;

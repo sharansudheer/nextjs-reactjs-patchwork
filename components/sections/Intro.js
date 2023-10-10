@@ -19,31 +19,137 @@ const words = [
   position: relative;
   overflow: none;
   background-color: #121212;
-`
+  margin: 0 auto;
+ 
+`;
 
 {/* styles.title*/}const Title = styled.div`
-  position: absolute;
+
+  position: absolute; 
   display: block;
   margin: 35vh 0 0 10vw;
-`
+  @media (max-width: 450px) {
+    margin: 30vh 0 0 1vw;
+  }
+  
+`;
 
-{/* styles.main*/}const SpanTitle = styled.span`
+{/* styles.main*/}const SpanTitle = styled.section`
   line-height: 58px;
   font-size: 64px;
   color: white;
   font-weight: 700;
+  @media (max-width: 450px) {
+   
+  }
 `
 
-{/* styles.greeting*/}const Greetings = styled.span`
+{/* styles.greeting*/}const Greetings = styled.h3`
   display: block;
   text-transform: uppercase;
-`
+  
+`;
 
-{/* styles.name*/}const Name = styled.span`
+{/* styles.name*/}const Name = styled.h3`
   display: inline-block;
   text-transform: uppercase;
   bottom: -45px;
-`
+  @media (max-width: 450px) {
+   
+  }
+`; 
+
+const SlideUp = styled.li`
+
+  transition: transform 1s;
+  transform: translateY(0) !important;
+  z-index: 5;
+  
+`; 
+
+.description ul {
+  overflow: hidden;
+  height: 24px;
+}
+
+.description > ul > li {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  display: block;
+  height: 25px;
+  white-space: nowrap;
+  margin-bottom: -25px;
+  background-color: #121212;
+  transform: translateY(25px);
+  transition: transform 1s;
+}
+
+.frontAvatar > .rect {
+  position: absolute;
+  top: 35vh;
+  left: 62%;
+  width: 300px;
+  height: 200px;
+  background-color: #7e767656;
+  border-radius: 20px;
+}
+
+.frontAvatar > .rect::before {
+  content: "";
+  position: absolute;
+  margin: -10px 0 0 -10px;
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  background: #1d1e22;
+}
+
+.frontAvatar > .rect > .Title {
+  position: absolute;
+  color: #e1e1e1b9;
+  margin: 10px 0 0 10px;
+  font-size: 12px;
+}
+
+.fileStat {
+  position: absolute;
+  background-color: #e1e1e1b9;
+  width: 8px;
+  height: 8px;
+  margin: 15px 0 0 60px;
+  display: block;
+  border-radius: 50%;
+}
+
+.fileSaved {
+  opacity: 0;
+}
+
+.scrollDown {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 85vh;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100px;
+}
+
+.hideField {
+  opacity: 0;
+}
+
+.showField {
+  opacity: 1;
+  animation: fadein 3s;
+}
+
 {/*Intro Section */}
 
 export default function Intro({ aboutMeRef }) {
@@ -119,13 +225,13 @@ export default function Intro({ aboutMeRef }) {
   }, [blink]);
 
 return(
-    <IntroDiv id="Home">
-      <Title>
-        <SpanTitle>
-          <Greetings>Hi.</Greetings>
-          <Name>IM ANSHIL</Name>
-        </SpanTitle>
-        <span className={styles.description}>
+  <IntroDiv id="Home">
+    <Title>
+      <SpanTitle>
+        <Greetings>Hi.</Greetings>
+         <Name>IM ANSHIL</Name>
+      </SpanTitle>
+        <section className={styles.description}>
           <ul>
             <li className={`${skillSlide == 4 ? styles.slideUp : ""}`}>
               Fullstack Developer
@@ -140,39 +246,39 @@ return(
               Problem solver
             </li>
           </ul>
-        </span>
-      </Title>
-      <div className={styles.frontAvatar}>
-        <div className={styles.rect}>
-          <div className={`${styles.Title}`}>index.js</div>
-          <div
-            className={`${styles.fileStat} ${complieStat ? styles.fileSaved : ""
-              }`}
-          ></div>
-          <pre className="language-html">
-            <code className="token">
-              &lt;<span className="tag">div</span>{" "}
-              <span className="keyword">className</span>=&quot;
-              <span className="arg">welcomeBlock</span>&quot;&gt; &lt;
-              <span className="tag">span</span>{" "}
-              <span className="keyword">className</span>=&quot;
-              <span className="arg">greetings</span>&quot;&gt;Hi.&lt;/
-              <span className="tag">span</span>&gt; &lt;
-              <span className="tag">span</span>{" "}
-              <span className="keyword">className</span>=&quot;
-              <span className="arg">nametag</span>&quot;&gt;IM ANSHIL&lt;/
-              <span className="tag">span</span>&gt; &lt;/
-              <span className="tag">span</span>&gt; &lt;
-              <span className="tag">span</span>{" "}
-              <span className="keyword">className</span>=&quot;
-              <span className="arg">description</span>&quot;&gt;{" "}
-              {`${words[index].substring(0, subIndex)}${blink ? "|" : " "}`}
-              &lt;/<span className="tag">span</span>&gt; &lt;/
-              <span className="tag">div</span>&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
+        </section>
+</Title>
+<div className={styles.frontAvatar}>
+  <div className={styles.rect}>
+    <div className={`${styles.Title}`}>index.js</div>
+    <div
+      className={`${styles.fileStat} ${complieStat ? styles.fileSaved : ""
+        }`}
+    ></div>
+    <pre className="language-html">
+      <code className="token">
+        &lt;<span className="tag">div</span>{" "}
+        <span className="keyword">className</span>=&quot;
+        <span className="arg">welcomeBlock</span>&quot;&gt; &lt;
+        <span className="tag">span</span>{" "}
+        <span className="keyword">className</span>=&quot;
+        <span className="arg">greetings</span>&quot;&gt;Hi.&lt;/
+        <span className="tag">span</span>&gt; &lt;
+        <span className="tag">span</span>{" "}
+        <span className="keyword">className</span>=&quot;
+        <span className="arg">nametag</span>&quot;&gt;IM ANSHIL&lt;/
+        <span className="tag">span</span>&gt; &lt;/
+        <span className="tag">span</span>&gt; &lt;
+        <span className="tag">span</span>{" "}
+        <span className="keyword">className</span>=&quot;
+        <span className="arg">description</span>&quot;&gt;{" "}
+        {`${words[index].substring(0, subIndex)}${blink ? "|" : " "}`}
+        &lt;/<span className="tag">span</span>&gt; &lt;/
+        <span className="tag">div</span>&gt;
+      </code>
+    </pre>
+  </div>
+</div>
       <div
         className={`${styles.scrollDown} ${show ? styles.showField : styles.hideField
           }`}

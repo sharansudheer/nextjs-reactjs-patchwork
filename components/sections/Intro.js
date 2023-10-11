@@ -59,7 +59,13 @@ const words = [
   }
 `; 
 
-const SlideUp = styled.li`
+{/*styles.description*/} const SectionSkillList = styled.section`
+  overflow: hidden;
+  height: 24px;
+`;
+{/**/}
+
+{/*Slide Up transition*/} const SlideUpTrans = styled.li`
 
   transition: transform 1s;
   transform: translateY(0) !important;
@@ -67,12 +73,7 @@ const SlideUp = styled.li`
   
 `; 
 
-.description ul {
-  overflow: hidden;
-  height: 24px;
-}
-
-.description > ul > li {
+{/**/} const ListItems = styled.li`
   position: relative;
   text-decoration: none;
   font-weight: 600;
@@ -84,19 +85,26 @@ const SlideUp = styled.li`
   background-color: #121212;
   transform: translateY(25px);
   transition: transform 1s;
-}
+`;
 
-.frontAvatar > .rect {
+
+{/*styles.Title*/}const CodeTitle = styled.div`
   position: absolute;
-  top: 35vh;
-  left: 62%;
-  width: 300px;
-  height: 200px;
-  background-color: #7e767656;
-  border-radius: 20px;
-}
+  color: #e1e1e1b9;
+  margin: 10px 0 0 10px;
+  font-size: 12px;
+`;
 
-.frontAvatar > .rect::before {
+{/*styles.rect*/} const Rect = styled.div`
+position: absolute;
+top: 35vh;
+left: 62%;
+width: 300px;
+height: 200px;
+background-color: #7e767656;
+border-radius: 20px;
+
+&::before {
   content: "";
   position: absolute;
   margin: -10px 0 0 -10px;
@@ -105,50 +113,8 @@ const SlideUp = styled.li`
   border-radius: 20px;
   background: #1d1e22;
 }
+`;
 
-.frontAvatar > .rect > .Title {
-  position: absolute;
-  color: #e1e1e1b9;
-  margin: 10px 0 0 10px;
-  font-size: 12px;
-}
-
-.fileStat {
-  position: absolute;
-  background-color: #e1e1e1b9;
-  width: 8px;
-  height: 8px;
-  margin: 15px 0 0 60px;
-  display: block;
-  border-radius: 50%;
-}
-
-.fileSaved {
-  opacity: 0;
-}
-
-.scrollDown {
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  top: 85vh;
-}
-
-.field {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100px;
-}
-
-.hideField {
-  opacity: 0;
-}
-
-.showField {
-  opacity: 1;
-  animation: fadein 3s;
-}
 
 {/*Intro Section */}
 
@@ -231,66 +197,66 @@ return(
         <Greetings>Hi.</Greetings>
          <Name>IM ANSHIL</Name>
       </SpanTitle>
-        <section className={styles.description}>
-          <ul>
-            <li className={`${skillSlide == 4 ? styles.slideUp : ""}`}>
-              Fullstack Developer
-            </li>
-            <li className={`${skillSlide == 1 ? styles.slideUp : ""}`}>
-              IoT Fullstack Developer
-            </li>
-            <li className={`${skillSlide == 3 ? styles.slideUp : ""}`}>
-              Programmer
-            </li>
-            <li className={`${skillSlide == 2 ? styles.slideUp : ""}`}>
-              Problem solver
-            </li>
-          </ul>
-        </section>
-</Title>
-<div className={styles.frontAvatar}>
-  <div className={styles.rect}>
-    <div className={`${styles.Title}`}>index.js</div>
-    <div
-      className={`${styles.fileStat} ${complieStat ? styles.fileSaved : ""
-        }`}
-    ></div>
-    <pre className="language-html">
-      <code className="token">
-        &lt;<span className="tag">div</span>{" "}
-        <span className="keyword">className</span>=&quot;
-        <span className="arg">welcomeBlock</span>&quot;&gt; &lt;
-        <span className="tag">span</span>{" "}
-        <span className="keyword">className</span>=&quot;
-        <span className="arg">greetings</span>&quot;&gt;Hi.&lt;/
-        <span className="tag">span</span>&gt; &lt;
-        <span className="tag">span</span>{" "}
-        <span className="keyword">className</span>=&quot;
-        <span className="arg">nametag</span>&quot;&gt;IM ANSHIL&lt;/
-        <span className="tag">span</span>&gt; &lt;/
-        <span className="tag">span</span>&gt; &lt;
-        <span className="tag">span</span>{" "}
-        <span className="keyword">className</span>=&quot;
-        <span className="arg">description</span>&quot;&gt;{" "}
-        {`${words[index].substring(0, subIndex)}${blink ? "|" : " "}`}
-        &lt;/<span className="tag">span</span>&gt; &lt;/
-        <span className="tag">div</span>&gt;
-      </code>
-    </pre>
-  </div>
-</div>
-      <div
-        className={`${styles.scrollDown} ${show ? styles.showField : styles.hideField
-          }`}
-          onClick={handleScrollClick}
-      >
-        <div className={styles.field}>
-          <div className={styles.scroll}></div>
+      <span className={styles.description}>
+            <ul>
+              <li className={`${skillSlide == 4 ? styles.slideUp : ""}`}>
+                Fullstack Developer
+              </li>
+              <li className={`${skillSlide == 1 ? styles.slideUp : ""}`}>
+                IoT Fullstack Developer
+              </li>
+              <li className={`${skillSlide == 3 ? styles.slideUp : ""}`}>
+                Programmer
+              </li>
+              <li className={`${skillSlide == 2 ? styles.slideUp : ""}`}>
+                Problem solver
+              </li>
+            </ul>
+          </span>
+    </Title>
 
-          {/* <div className={styles.scroll}></div> */}
+    <div className={styles.frontAvatar}>
+          <div className={styles.rect}>
+            <div className={`${styles.Title}`}>index.js</div>
+            <div
+              className={`${styles.fileStat} ${complieStat ? styles.fileSaved : ""
+                }`}
+            ></div>
+            <pre className="language-html">
+              <code className="token">
+                &lt;<span className="tag">div</span>{" "}
+                <span className="keyword">className</span>=&quot;
+                <span className="arg">welcomeBlock</span>&quot;&gt; &lt;
+                <span className="tag">span</span>{" "}
+                <span className="keyword">className</span>=&quot;
+                <span className="arg">greetings</span>&quot;&gt;Hi.&lt;/
+                <span className="tag">span</span>&gt; &lt;
+                <span className="tag">span</span>{" "}
+                <span className="keyword">className</span>=&quot;
+                <span className="arg">nametag</span>&quot;&gt;IM ANSHIL&lt;/
+                <span className="tag">span</span>&gt; &lt;/
+                <span className="tag">span</span>&gt; &lt;
+                <span className="tag">span</span>{" "}
+                <span className="keyword">className</span>=&quot;
+                <span className="arg">description</span>&quot;&gt;{" "}
+                {`${words[index].substring(0, subIndex)}${blink ? "|" : " "}`}
+                &lt;/<span className="tag">span</span>&gt; &lt;/
+                <span className="tag">div</span>&gt;
+              </code>
+            </pre>
+          </div>
         </div>
+    <div
+      className={`${styles.scrollDown} ${show ? styles.showField : styles.hideField
+        }`}
+        onClick={handleScrollClick}
+    >
+      <div className={styles.field}>
+        <div className={styles.scroll}></div>
       </div>
-      </IntroDiv>
+    </div>
+
+  </IntroDiv>
 
 );
 

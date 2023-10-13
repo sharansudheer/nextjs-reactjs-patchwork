@@ -197,23 +197,29 @@ return(
         <Greetings>Hi.</Greetings>
          <Name>IM ANSHIL</Name>
       </SpanTitle>
-      <span className={styles.description}>
+
+      <SectionSkillList>
             <ul>
-              <li className={`${skillSlide == 4 ? styles.slideUp : ""}`}>
+              <ListItems className={`${skillSlide == 4 ? styles.slideUp : ""}`}>
                 Fullstack Developer
-              </li>
-              <li className={`${skillSlide == 1 ? styles.slideUp : ""}`}>
+              </ListItems>
+
+              <ListItems className={`${skillSlide == 1 ? styles.slideUp : ""}`}>
                 IoT Fullstack Developer
-              </li>
-              <li className={`${skillSlide == 3 ? styles.slideUp : ""}`}>
+              </ListItems>
+
+              <ListItems className={`${skillSlide == 3 ? styles.slideUp : ""}`}>
                 Programmer
-              </li>
-              <li className={`${skillSlide == 2 ? styles.slideUp : ""}`}>
+              </ListItems>
+
+              <ListItems className={`${skillSlide == 2 ? styles.slideUp : ""}`}>
                 Problem solver
-              </li>
+              </ListItems>
+
             </ul>
-          </span>
+          </SectionSkillList>
     </Title>
+
 
     <div className={styles.frontAvatar}>
           <div className={styles.rect}>
